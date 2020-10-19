@@ -32,6 +32,7 @@
                             <input type="text" class="form-control" name="gender" value="{{old('gender')}}">
                         </div>
                     </div>
+                    
                     <div class="form-group-row">
                         <label class="col-md-2">趣味</label>
                         <div class="col-md-10">
@@ -41,7 +42,7 @@
                     <div class="form-group-row">
                         <label class="col-md-2">自己紹介</label>
                         <div class="col-md-10">
-                            <input type="text" class="form-control" name="introduction" value="{{old('introduction')}}">
+                            <textarea class="form-control" name="introduction" rows="20">{{old('introduction')}}</textarea>
                         </div>
                     </div>
                     {{ csrf_field() }}
