@@ -1,7 +1,8 @@
 @extends('layouts.profile')
-@section('title', 'ニュースの新規作成')
+@section('title', 'プロフィールの編集')
 
 @section('content')
+
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
@@ -26,7 +27,7 @@
                             <input type="text" class="form-control" name="gender" value="{{ $profile_form->gender }}">
                         </div>
                     </div>
-                    <div class="form-group-row">
+                    <div class="form-group row">
                         <lable class="col-md-2" for="hobby">趣味</lable>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby" value="{{ $profile_form->hobby }}">
@@ -40,7 +41,7 @@
                     </div>
                     <div class="form-group row">
                         <div class="col-md-10">
-                            <input type="hidden" name="id" value"{{ $profile_form->id }}">
+                            <input type="hidden" name="id" value="{{ $profile_form->id }}">
                             {{ csrf_field() }}
                             <input type="submit" class="btn btn-primary" value="更新">
                         </div>
