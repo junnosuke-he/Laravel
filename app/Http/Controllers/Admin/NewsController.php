@@ -8,6 +8,9 @@ use App\Http\Controllers\Controller;
 //以下を追記することでnews modelが使えるようになる
 use App\News;
 
+use App\History;
+use Carbon\Carbon;
+
 class NewsController extends Controller
 {
     //
@@ -42,7 +45,7 @@ class NewsController extends Controller
         $news->save();
         
         // admin/news/createにリダイレクトする
-        return redirect('admin/news/create');
+        return redirect('admin/news/');
     }
     public function index(Request $request)
     {
@@ -82,10 +85,16 @@ class NewsController extends Controller
         } else {
             $news_form['image_path'] = $news->image_path;
         }
-        
+        unset($news_form['remove']);
         unset($news_form['_token']);
+        unset($news_form['image']);
         //該当するデータを上書きして保存する
         $news->fill($news_form)->save();
+        
+        $history = new History;
+        $history->news_id = $news->id;
+        $history->edited_at = Carbon::now();
+        $history->save();
         
         return redirect('admin/news/');
     }
