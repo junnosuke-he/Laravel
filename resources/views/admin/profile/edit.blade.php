@@ -28,7 +28,7 @@
                         </div>
                     </div>
                     <div class="form-group row">
-                        <lable class="col-md-2" for="hobby">趣味</lable>
+                        <lable class="col-md-2" for="hobby">趣味・特技</lable>
                         <div class="col-md-10">
                             <input type="text" class="form-control" name="hobby" value="{{ $profile_form->hobby }}">
                         </div>

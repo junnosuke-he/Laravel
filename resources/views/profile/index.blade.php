@@ -21,7 +21,7 @@
                            {{ "性別:". str_limit($post->gender, 150) }}
                        </div>
                        <div class="hobby">
-                           {{ "趣味:". str_limit($post->hobby, 150) }}
+                           {{ "趣味・特技:". str_limit($post->hobby, 150) }}
                        </div>
                        <div class="introduction mt-3">
                            {{ "自己紹介:". str_limit($post->introduction, 1500) }}
