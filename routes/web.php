@@ -21,6 +21,7 @@ Route::get('/', function () {
         Route::get('news/edit', 'Admin\NewsController@edit')->middleware('auth');
         Route::post('news/edit', 'Admin\NewsController@update')->middleware('auth');
         Route::get('news/delete', 'Admin\NewsController@delete')->middleware('auth');
+       
         //4.【応用】
         Route::get("profile/create","Admin\ProfileController@add")->middleware('auth');
         Route::get("profile/edit","Admin\ProfileController@edit")->middleware('auth');
@@ -36,3 +37,5 @@ Route::get('/', function () {
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'NewsController@index');
+Route::get('profile', 'ProfileController@index');
